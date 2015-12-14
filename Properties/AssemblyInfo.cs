@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("GFolder")]
+[assembly: AssemblyTitle("G-Folder 3.0")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GFolder")]
+[assembly: AssemblyCompany("Grider Software")]
+[assembly: AssemblyProduct("G-Folder 3.0")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.61")]
-[assembly: AssemblyFileVersion("1.0.0.61")]
+[assembly: AssemblyVersion("1.0.0.63")]
+[assembly: AssemblyFileVersion("1.0.0.63")]
