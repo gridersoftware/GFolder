@@ -52,6 +52,7 @@
             this.btnRemove = new System.Windows.Forms.Button();
             this.btnCreateTree = new System.Windows.Forms.Button();
             this.tvFolderTree = new System.Windows.Forms.TreeView();
+            this.dlgOpenFile = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbExpand)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.gbLog.SuspendLayout();
@@ -213,6 +214,7 @@
             // lstLog
             // 
             this.lstLog.FormattingEnabled = true;
+            this.lstLog.HorizontalScrollbar = true;
             this.lstLog.Location = new System.Drawing.Point(9, 19);
             this.lstLog.Name = "lstLog";
             this.lstLog.Size = new System.Drawing.Size(295, 134);
@@ -258,6 +260,12 @@
             this.tvFolderTree.Size = new System.Drawing.Size(271, 317);
             this.tvFolderTree.TabIndex = 0;
             this.tvFolderTree.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvFolderTree_AfterSelect);
+            // 
+            // dlgOpenFile
+            // 
+            this.dlgOpenFile.DefaultExt = "txt";
+            this.dlgOpenFile.Filter = "Text Files|*.txt";
+            this.dlgOpenFile.Title = "Open File";
             // 
             // frmMain
             // 
@@ -317,6 +325,7 @@
         private System.Windows.Forms.Button btnCreateTree;
         private System.Windows.Forms.TreeView tvFolderTree;
         private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.OpenFileDialog dlgOpenFile;
     }
 }
 

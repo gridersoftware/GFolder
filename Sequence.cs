@@ -117,7 +117,8 @@ namespace GFolder
 
         public string Header
         {
-            get { throw new NotImplementedException(); }
+            get;
+            protected set;
         }
 
         public ISequence NewSequence()

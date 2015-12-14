@@ -7,8 +7,6 @@ namespace GFolder
 {
     abstract class CharSequence : Sequence
     {
-        public new string Header { get; private set; }
-
         public CharSequence(char from, char to, char min, char max, string header)
             : base(from.ToString(), to.ToString())
         {

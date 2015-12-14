@@ -14,6 +14,7 @@ namespace GFolder
     public partial class frmMain : Form
     {
         public bool Expanded { get; private set; }
+        bool canOpenFile = true;
 
         const int RESTORED_WIDTH = 336;
         const int RESTORED_HEIGHT = 122;
@@ -40,6 +41,7 @@ namespace GFolder
             cboSequenceType.Items.Add(new IntSequence(1, 10));
             cboSequenceType.Items.Add(new LowerLettersSequence('a', 'z'));
             cboSequenceType.Items.Add(new UpperLettersSequence('A', 'Z'));
+            cboSequenceType.Items.Add(new CustomSequence());
 
             cboSequenceType.SelectedIndex = 0;
         }
@@ -197,14 +199,14 @@ namespace GFolder
             return Regex.IsMatch(value, @"\[[A-Z][A-Z]:[^-]+-[^\]]+\]");
         }
 
-        void ExtractNameComponents(string rawFolderName, out string[] parts, out ISequence[] sequences)
+        bool ExtractNameComponents(string rawFolderName, out string[] parts, out ISequence[] sequences)
         {
             sequences = new ISequence[0];
 
             if (!ContainsSequences(rawFolderName, out parts))
             {
                 parts = new string[] { rawFolderName };
-                return;
+                return true;
             }
 
             List<ISequence> seq = new List<ISequence>();
@@ -222,22 +224,24 @@ namespace GFolder
                         {
                             // If the sequence cannot be interpreted, it may not be supported.
                             ErrorMsg(string.Format("\"{0}\" is not a valid or supported sequence.", parts[i]));
-                            return;
+                            return false;
                         }
 
                         // Add the sequence to the list.
                         seq.Add(temp);
                     }
-                    catch (ArgumentOutOfRangeException)
+                    catch (ArgumentException)
                     {
                         // In the case that something weird goes wrong and the txtFrom.Text or txtTo.Text values can't be parsed, it should throw an error.
-                        ErrorMsg("The From or To parameters cannot be correctly parsed into the selected sequence type. Please contact the developer.");
+                        ErrorMsg("The From or To parameters cannot be correctly parsed into the selected sequence type. Did you modify the sequence code?");
+                        return false;
                     }
                 }
             }
 
             // Set the sequence list.
             sequences = seq.ToArray();
+            return true;
         }
 
         bool ContainsSequences(string folderName, out string[] parts)
@@ -250,6 +254,17 @@ namespace GFolder
 
         private void cboSequenceType_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if ((canOpenFile) && (cboSequenceType.SelectedItem is CustomSequence))
+            {
+                canOpenFile = false;
+                DialogResult openFile = dlgOpenFile.ShowDialog();
+                if (openFile == System.Windows.Forms.DialogResult.OK)
+                    cboSequenceType.Items[cboSequenceType.SelectedIndex] = new CustomSequence(File.ReadAllLines(dlgOpenFile.FileName));
+                else
+                    cboSequenceType.SelectedIndex = 0;
+            }
+            canOpenFile = true;
+
             ISequence item = (ISequence)cboSequenceType.SelectedItem;
 
             txtTo.Text = item.To.ToString();
@@ -304,7 +319,8 @@ namespace GFolder
 
             int totalFolders = 1;
 
-            ExtractNameComponents(node.Text, out parts, out sequences);
+            if (!ExtractNameComponents(node.Text, out parts, out sequences))
+                return;
 
             int[] counters = new int[sequences.Length];
             
