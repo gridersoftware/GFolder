@@ -78,7 +78,7 @@ namespace GFolder
         private void frmMain_HelpButtonClicked(object sender, CancelEventArgs e)
         {
             e.Cancel = true;
-            // TODO: Load help file
+            System.Diagnostics.Process.Start("https://github.com/gridersoftware/GFolder#gfolder");
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
