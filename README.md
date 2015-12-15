@@ -51,7 +51,7 @@ Select a sequence type from the dropdown list. As of this writing there are four
 * Custom Sequence - A list of fixed names imported from a text file.
 
 Once you have your **Type** selected, you may modify the values in **To** and **From**. These values are inclusive,
-and will determine the range of the sequence.
+and will determine the range of the sequence. **These values are case-sensitive!**
 
 After you've done this, click **Add Sequence**. The sequence will be translated into a Sequence Code in the format
 "[XX:Y-Z]", which is appended to the end of the **Folder Name**. The "XX" component is a two-letter code representing the type
@@ -61,6 +61,28 @@ are the values you picked for From and To, respectively.
 You may add as many sequences as you like, add fixed text before, after, and in between sequences in the **Folder Name** textbox.
 
 Once you've finished your folder name, click **Add to Tree** to add the folder to the selected node in the **Folder Tree** pane.
+
+#### Custom Sequence Type
+The Custom Sequence Type takes a plain text file to use for generating the sequence. Each item must go on a seperate line
+without any blank lines (do not hit Return after the last line), as a blank line will count as an item. The following is an example
+of an acceptable file.
+
+    This is a
+    custom list
+    of folder names
+    that can be added
+    as a Custom
+    Sequence
+
+When the user selects the Custom Sequence type, an Open File dialog will open. Select your text file, and the items will be loaded as
+a sequence. You can use this sequence like any other kind, including using only a subset of the sequence range. For example, it is
+possible to use the range from "custom list" to "as a Custom" from the above list, which would include the folders:
+*custom list
+*of folder names
+*that can be added
+*as a Custom
+
+Values in the **From** and **To** textboxes are case-sensitive.
 
 ### Using the Folder Tree
 The first node in the **Folder Tree** is the directory listed in **Path**, where your folders will be created.
