@@ -77,10 +77,10 @@ of an acceptable file.
 When the user selects the Custom Sequence type, an Open File dialog will open. Select your text file, and the items will be loaded as
 a sequence. You can use this sequence like any other kind, including using only a subset of the sequence range. For example, it is
 possible to use the range from "custom list" to "as a Custom" from the above list, which would include the folders:
-*custom list
-*of folder names
-*that can be added
-*as a Custom
+* custom list
+* of folder names
+* that can be added
+* as a Custom
 
 Values in the **From** and **To** textboxes are case-sensitive.
 
