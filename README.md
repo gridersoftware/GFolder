@@ -1,4 +1,4 @@
-# G-Folder
+# GFolder
 
 ## Requirements
 * Windows XP SP3 or newer
