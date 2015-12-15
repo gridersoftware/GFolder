@@ -101,3 +101,6 @@ from your computer if they exist.
 You may access this help file at any time by clicking the **?** icon at the top of the window (Requires Internet connection).
 
 If you have any problems with the software, or wish to request a feature, you may do so on the [GitHub Issues page] (https://github.com/gridersoftware/GFolder/issues).
+
+## Contributors
+Information for contributors is located on [the wiki] (https://github.com/gridersoftware/GFolder/wiki).
