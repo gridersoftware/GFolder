@@ -2,7 +2,7 @@
 
 ## Requirements
 * Windows XP SP3 or newer
-* [Microsoft .Net Framework 4 Client Profile] (https://www.microsoft.com/en-us/download/details.aspx?id=24872) - You probably already have this if you meet the above prerequisite.
+* [Microsoft .Net Framework 4 Client Profile](https://www.microsoft.com/en-us/download/details.aspx?id=24872) - You probably already have this if you meet the above prerequisite.
 
 ## What Is This?
 G-Folder is a small utility program designed to make folders in bulk. It can be used to make individual folders,
@@ -47,7 +47,7 @@ Select a sequence type from the dropdown list. As of this writing there are four
 
 * Integers - Numbers ranging from -2,147,483,648 to 2,147,483,647.
 * Lowercase Letters - Letters in the English alphabet ranging from 'a' to 'z'.
-* Uppercase Letters - Letters in the Engliish alphabet ranging from 'A' to 'Z'.
+* Uppercase Letters - Letters in the English alphabet ranging from 'A' to 'Z'.
 * Custom Sequence - A list of fixed names imported from a text file.
 
 Once you have your **Type** selected, you may modify the values in **To** and **From**. These values are inclusive,
@@ -100,7 +100,7 @@ from your computer if they exist.
 ## Help and Support
 You may access this help file at any time by clicking the **?** icon at the top of the window (Requires Internet connection).
 
-If you have any problems with the software, or wish to request a feature, you may do so on the [GitHub Issues page] (https://github.com/gridersoftware/GFolder/issues).
+If you have any problems with the software, or wish to request a feature, you may do so on the [GitHub Issues page](https://github.com/gridersoftware/GFolder/issues).
 
 ## Contributors
-Information for contributors is located on [the wiki] (https://github.com/gridersoftware/GFolder/wiki).
+Information for contributors is located on [the wiki](https://github.com/gridersoftware/GFolder/wiki).
